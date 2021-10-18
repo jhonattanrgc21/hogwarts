@@ -1,11 +1,28 @@
 <h2>Students list</h2>
+
+<hr>
 <div class="row">
   <div class="col">
     <div class="form-group">
-      <input type="text" class="form-control" #filterStudents = "ngModel" [(ngModel)]="filterStudents" placeholder="Search by house..." >
+      <input type="text"
+        class="form-control"
+        placeholder="Search by house..."
+        #txtSearch
+        (keyup)="onSearchStudents(txtSearch.value)"
+      >
     </div>
   </div>
 </div>
+
+<br>
+<button class="btn btn-primary" (click)="prevPage()">
+  Anteriores
+</button>
+&nbsp;
+<button class="btn btn-primary" (click)="nextPage()" [disabled]="(students | filterStudents:page:filterStudents).length === 0">
+  Siguientes
+</button>
+<br>
 
 <div class="row">
   <div class="col">
@@ -19,9 +36,9 @@
           <th>House</th>
         </tr>
       </thead>
-      <tbody *ngFor="let student of students">
+      <tbody *ngFor="let student of students | filterStudents:page:filterStudents" [ngStyle]="{'height': '50px'}">
         <tr>
-          <td *ngIf="student.image, else image"><img src="{{student.image}}" alt="foto del personaje" width="90"></td>
+          <td *ngIf="student.image, else image"><img [src]="student.image" [alt]="student.name" width="90"></td>
 
           <ng-template #image>
             <td>Not found image</td>

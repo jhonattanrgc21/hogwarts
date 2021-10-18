@@ -14,8 +14,9 @@ import { Student } from '../../interfaces/students.interface';
 })
 export class StudentComponent implements OnInit {
   // Atributos
-  filterStudents: string = '';
-  students: any = [];
+  public filterStudents: string = '';
+  public students: any = [];
+  public page: number = 0;
 
   // Constructor
   constructor(private studentService: StudentService) { }
@@ -31,4 +32,18 @@ export class StudentComponent implements OnInit {
     });
   }
 
+  prevPage(){
+    if (this.page > 0)
+      this.page -= 5;
+  }
+
+
+  nextPage(){
+    this.page += 5;
+  }
+
+  onSearchStudents(search: string){
+    this.page = 0;
+    this.filterStudents = search;
+  }
 }

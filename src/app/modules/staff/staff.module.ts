@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 
 // Componentes
 import { StaffComponent } from './staff.component';
+import { FilterStaffsPipe } from './pipes/filter-staffs.pipe';
 
 @NgModule({
-  declarations: [StaffComponent],
+  declarations: [StaffComponent, FilterStaffsPipe],
   imports: [
     CommonModule
   ],
