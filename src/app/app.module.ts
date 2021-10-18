@@ -4,25 +4,23 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StaffComponent } from './components/staff/staff.component';
-import { StudentComponent } from './components/student/student.component';
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
+import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './modules/home/home.module';
+import { StudentModule } from './modules/student/student.module';
+import { StaffModule } from './modules/staff/staff.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    StaffComponent,
-    StudentComponent,
-    HomeComponent,
-    FooterComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    HomeModule,
+    StaffModule,
+    StudentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
