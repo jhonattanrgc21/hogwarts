@@ -1,5 +1,10 @@
+// Modulos de Angular
 import { Component, OnInit } from '@angular/core';
+
+// Servicios
 import { StaffService } from '../../services/staff.service';
+
+// Interfaces
 import { Staff } from '../../interfaces/staffs.interface';
 
 @Component({
@@ -8,9 +13,13 @@ import { Staff } from '../../interfaces/staffs.interface';
   styleUrls: ['./staff.component.scss']
 })
 export class StaffComponent implements OnInit {
+  // Atributos
   staffs: any = [];
+
+  // Constructor
   constructor(private staffService: StaffService) { }
 
+  // Metodos
   ngOnInit(): void {
     this.getStaff();
   }

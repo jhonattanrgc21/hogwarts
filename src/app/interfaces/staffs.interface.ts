@@ -1,3 +1,4 @@
+// Interface de Staff (Personal)
 export interface Staff {
   name: string;
   alternate_names: any;

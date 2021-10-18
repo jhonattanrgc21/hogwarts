@@ -1,5 +1,10 @@
+// Modulos de Angular
 import { Component, OnInit } from '@angular/core';
+
+// Servicios
 import { StudentService } from '../../services/student.service';
+
+// Interfaces
 import { Student } from '../../interfaces/students.interface';
 
 @Component({
@@ -8,9 +13,14 @@ import { Student } from '../../interfaces/students.interface';
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent implements OnInit {
+  // Atributos
+  filterStudents: string = '';
   students: any = [];
+
+  // Constructor
   constructor(private studentService: StudentService) { }
 
+  // Metodos
   ngOnInit(): void {
     this.getStudent();
   }

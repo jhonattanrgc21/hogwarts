@@ -1,7 +1,9 @@
+// Modulos de Angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentComponent } from './student.component';
 
+// Componentes
+import { StudentComponent } from './student.component';
 
 
 @NgModule({

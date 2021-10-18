@@ -1,8 +1,9 @@
+// Modulos de Angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+// Componentes
 import { StaffComponent } from './staff.component';
-
-
 
 @NgModule({
   declarations: [StaffComponent],

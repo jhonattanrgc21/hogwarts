@@ -1,28 +1,37 @@
-<h2>Students</h2>
+<h2>Students list</h2>
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <input type="text" class="form-control" #filterStudents = "ngModel" [(ngModel)]="filterStudents" placeholder="Search by house..." >
+    </div>
+  </div>
+</div>
 
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Species</th>
-        <th>Gender</th>
-        <th>House</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let student of students">
-      <tr>
-        <td *ngIf="student.image, else image"><img src="{{student.image}}" alt="foto del personaje" width="90"></td>
+<div class="row">
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Species</th>
+          <th>Gender</th>
+          <th>House</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let student of students">
+        <tr>
+          <td *ngIf="student.image, else image"><img src="{{student.image}}" alt="foto del personaje" width="90"></td>
 
-        <ng-template #image>
-          <td>Not found image</td>
-        </ng-template>
-        <td>{{ student.name }}</td>
-        <td>{{ student.species }}</td>
-        <td>{{ student.gender }}</td>
-        <td>{{ student.house }}</td>
-      </tr>
-    </tbody>
-  </table>
+          <ng-template #image>
+            <td>Not found image</td>
+          </ng-template>
+          <td>{{ student.name }}</td>
+          <td>{{ student.species }}</td>
+          <td>{{ student.gender }}</td>
+          <td>{{ student.house }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
