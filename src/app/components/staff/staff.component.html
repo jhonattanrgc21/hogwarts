@@ -1,0 +1,28 @@
+<h2>Staff</h2>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Species</th>
+        <th>Gender</th>
+        <th>House</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let staff of staffs">
+      <tr>
+        <td *ngIf="staff.image, else image"><img src="{{staff.image}}" alt="foto del personaje" width="90"></td>
+
+        <ng-template #image>
+          <td>Not found image</td>
+        </ng-template>
+        <td>{{ staff.name }}</td>
+        <td>{{ staff.species }}</td>
+        <td>{{ staff.gender }}</td>
+        <td>{{ staff.house }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
