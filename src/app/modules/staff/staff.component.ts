@@ -9,8 +9,7 @@ import { Staff } from '../../interfaces/staffs.interface';
 
 @Component({
   selector: 'app-staff',
-  templateUrl: './staff.component.html',
-  styleUrls: ['./staff.component.scss']
+  templateUrl: './staff.component.html'
 })
 export class StaffComponent implements OnInit {
   // Atributos
